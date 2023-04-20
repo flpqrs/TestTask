@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharpTest
 {
@@ -13,6 +9,11 @@ namespace CSharpTest
 
         public WeekEnd(DateTime startDate, DateTime endDate)
         {
+            if (endDate < startDate)
+            {
+                throw new ArgumentException("Weekend end date must be after start date");
+            }
+
             StartDate = startDate;
             EndDate = endDate;
         }
